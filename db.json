@@ -1,0 +1,295 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "David Raya",
+      "club": "Arsenal",
+      "position": "Goalkeeper",
+      "cost": 5.5,
+      "image": "https://ui-avatars.com/api/?name=David+Raya&size=128"
+    },
+    {
+      "id": 2,
+      "name": "Robert Sanchez",
+      "club": "Chelsea",
+      "position": "Goalkeeper",
+      "cost": 5.0,
+      "image": "https://ui-avatars.com/api/?name=Robert+Sanchez&size=128"
+    },
+    {
+      "id": 3,
+      "name": "Alisson Becker",
+      "club": "Liverpool",
+      "position": "Goalkeeper",
+      "cost": 6.0,
+      "image": "https://ui-avatars.com/api/?name=Alisson+Becker&size=128"
+    },
+    {
+      "id": 4,
+      "name": "Gianluigi Donnarumma",
+      "club": "Manchester City",
+      "position": "Goalkeeper",
+      "cost": 6.5,
+      "image": "https://ui-avatars.com/api/?name=Gianluigi+Donnarumma&size=128"
+    },
+    {
+      "id": 5,
+      "name": "Altay Bayindir",
+      "club": "Manchester United",
+      "position": "Goalkeeper",
+      "cost": 6.0,
+      "image": "https://ui-avatars.com/api/?name=Altay+Bayindir&size=128"
+    },
+    {
+      "id": 6,
+      "name": "Guglielmo Vicario",
+      "club": "Tottenham Hotspur",
+      "position": "Goalkeeper",
+      "cost": 5.5,
+      "image": "https://ui-avatars.com/api/?name=Guglielmo+Vicario&size=128"
+    },
+
+    {
+      "id": 7,
+      "name": "William Saliba",
+      "club": "Arsenal",
+      "position": "Defender",
+      "cost": 6.0,
+      "image": "https://ui-avatars.com/api/?name=William+Saliba&size=128"
+    },
+    {
+      "id": 8,
+      "name": "Reece James",
+      "club": "Chelsea",
+      "position": "Defender",
+      "cost": 7.0,
+      "image": "https://ui-avatars.com/api/?name=Reece+James&size=128"
+    },
+    {
+      "id": 9,
+      "name": "Virgil van Dijk",
+      "club": "Liverpool",
+      "position": "Defender",
+      "cost": 6.5,
+      "image": "https://ui-avatars.com/api/?name=Virgil+van+Dijk&size=128"
+    },
+    {
+      "id": 10,
+      "name": "Ruben Dias",
+      "club": "Manchester City",
+      "position": "Defender",
+      "cost": 6.0,
+      "image": "https://ui-avatars.com/api/?name=Ruben+Dias&size=128"
+    },
+    {
+      "id": 11,
+      "name": "Matthijs De Ligt",
+      "club": "Manchester United",
+      "position": "Defender",
+      "cost": 5.5,
+      "image": "https://ui-avatars.com/api/?name=Matthijs+De+Ligt&size=128"
+    },
+    {
+      "id": 12,
+      "name": "Micky van de Ven",
+      "club": "Tottenham Hotspur",
+      "position": "Defender",
+      "cost": 5.5,
+      "image": "https://ui-avatars.com/api/?name=Micky+van+de+Ven&size=128"
+    },
+
+    {
+      "id": 13,
+      "name": "Martin Ødegaard",
+      "club": "Arsenal",
+      "position": "Midfielder",
+      "cost": 8.0,
+      "image": "https://ui-avatars.com/api/?name=Martin+Ødegaard&size=128"
+    },
+    {
+      "id": 14,
+      "name": "Declan Rice",
+      "club": "Arsenal",
+      "position": "Midfielder",
+      "cost": 7.0,
+      "image": "https://ui-avatars.com/api/?name=Declan+Rice&size=128"
+    },
+    {
+      "id": 15,
+      "name": "Cole Palmer",
+      "club": "Chelsea",
+      "position": "Midfielder",
+      "cost": 7.5,
+      "image": "https://ui-avatars.com/api/?name=Cole+Palmer&size=128"
+    },
+    {
+      "id": 16,
+      "name": "Enzo Fernández",
+      "club": "Chelsea",
+      "position": "Midfielder",
+      "cost": 8.0,
+      "image": "https://ui-avatars.com/api/?name=Enzo+Fernandez&size=128"
+    },
+    {
+      "id": 17,
+      "name": "Alexis Mac Allister",
+      "club": "Liverpool",
+      "position": "Midfielder",
+      "cost": 7.5,
+      "image": "https://ui-avatars.com/api/?name=Alexis+Mac+Allister&size=128"
+    },
+    {
+      "id": 18,
+      "name": "Mohamed Salah",
+      "club": "Liverpool",
+      "position": "Midfielder",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Mohamed+Salah&size=128"
+    },
+    {
+      "id": 19,
+      "name": "Rodri",
+      "club": "Manchester City",
+      "position": "Midfielder",
+      "cost": 9.5,
+      "image": "https://ui-avatars.com/api/?name=Rodri&size=128"
+    },
+    {
+      "id": 20,
+      "name": "Bernardo Silva",
+      "club": "Manchester City",
+      "position": "Midfielder",
+      "cost": 8.5,
+      "image": "https://ui-avatars.com/api/?name=Bernardo+Silva&size=128"
+    },
+    {
+      "id": 21,
+      "name": "Bruno Fernandes",
+      "club": "Manchester United",
+      "position": "Midfielder",
+      "cost": 8.0,
+      "image": "https://ui-avatars.com/api/?name=Bruno+Fernandes&size=128"
+    },
+    {
+      "id": 22,
+      "name": "Kobbie Mainoo",
+      "club": "Manchester United",
+      "position": "Midfielder",
+      "cost": 7.5,
+      "image": "https://ui-avatars.com/api/?name=Kobbie+Mainoo&size=128"
+    },
+    {
+      "id": 23,
+      "name": "James Maddison",
+      "club": "Tottenham Hotspur",
+      "position": "Midfielder",
+      "cost": 7.0,
+      "image": "https://ui-avatars.com/api/?name=James+Maddison&size=128"
+    },
+    {
+      "id": 24,
+      "name": "Xavi Simons",
+      "club": "Tottenham Hotspur",
+      "position": "Midfielder",
+      "cost": 6.5,
+      "image": "https://ui-avatars.com/api/?name=Xavi+Simons&size=128"
+    },
+
+    {
+      "id": 25,
+      "name": "Bukayo Saka",
+      "club": "Arsenal",
+      "position": "Attacker",
+      "cost": 10.0,
+      "image": "https://ui-avatars.com/api/?name=Bukayo+Saka&size=128"
+    },
+    {
+      "id": 26,
+      "name": "Gabriel Martinelli",
+      "club": "Arsenal",
+      "position": "Attacker",
+      "cost": 9.5,
+      "image": "https://ui-avatars.com/api/?name=Gabriel+Martinelli&size=128"
+    },
+    {
+      "id": 27,
+      "name": "Joao Pedro",
+      "club": "Chelsea",
+      "position": "Attacker",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Joao+Pedro&size=128"
+    },
+    {
+      "id": 28,
+      "name": "Liam Delap",
+      "club": "Chelsea",
+      "position": "Attacker",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Liam+Delap&size=128"
+    },
+    {
+      "id": 29,
+      "name": "Mohamed Salah",
+      "club": "Liverpool",
+      "position": "Attacker",
+      "cost": 11.0,
+      "image": "https://ui-avatars.com/api/?name=Mohamed+Salah&size=128"
+    },
+    {
+      "id": 30,
+      "name": "Alexander Isak",
+      "club": "Liverpool",
+      "position": "Attacker",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Alexander+Isak&size=128"
+    },
+    {
+      "id": 31,
+      "name": "Erling Haaland",
+      "club": "Manchester City",
+      "position": "Attacker",
+      "cost": 12.0,
+      "image": "https://ui-avatars.com/api/?name=Erling+Haaland&size=128"
+    },
+    {
+      "id": 32,
+      "name": "Omar Marmoush",
+      "club": "Manchester City",
+      "position": "Attacker",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Omar+Marmoush&size=128"
+    },
+    {
+      "id": 33,
+      "name": "Benjamin Sesko",
+      "club": "Manchester United",
+      "position": "Attacker",
+      "cost": 10.5,
+      "image": "https://ui-avatars.com/api/?name=Benjamin+Sesko&size=128"
+    },
+    {
+      "id": 34,
+      "name": "Matheus Cunha",
+      "club": "Chelsea",
+      "position": "Attacker",
+      "cost": 9.0,
+      "image": "https://ui-avatars.com/api/?name=Matheus+Cunha&size=128"
+    },
+    {
+      "id": 35,
+      "name": "Richarlison",
+      "club": "Tottenham Hotspur",
+      "position": "Attacker",
+      "cost": 10.0,
+      "image": "https://ui-avatars.com/api/?name=Richarlison&size=128"
+    },
+    {
+      "id": 36,
+      "name": "Randal Kolo Muani",
+      "club": "Tottenham Hotspur",
+      "position": "Attacker",
+      "cost": 9.5,
+      "image": "https://ui-avatars.com/api/?name=Randal+Kolo+Muani&size=128"
+    }
+  ]
+}
