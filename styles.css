@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url(https://thumbs.dreamstime.com/b/half-football-field-soccer-field-pattern-texture-clipping-path-abstract-background-86136398.jpg);
+  background-size: cover;
+  width: 90%;
+  height: 88vh;
+}
