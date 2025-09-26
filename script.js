@@ -1,12 +1,17 @@
-let selectedPosition = null;
+// Initialisation of global variables
+
+let selectedPosition = null; // sets the initial jersey selected to null
 let player = [];
 let team = [];
-let budget = 40.0;
-let spent = 0.0;
+let budget = 40.0; // starting budget - later used in calculation
+let spent = 0.0; //amount spent - later used in calculation
+
+// creation of constants to reference elements in html for dynamic updating
 const playerList = document.querySelector(".playerList");
 const spentValue = document.getElementById("spent-value");
 const remainingValue = document.getElementById("remaining-value");
 
+// Position IDs used in HTMl different from data hence the use of this object
 const positionMap = {
   gk: "Goalkeeper",
   def: "Defender",
@@ -15,34 +20,41 @@ const positionMap = {
   att: "Attacker",
 };
 
+// Budgeting
+
+// simple function used to update the text content of the spentValue and remainingValue
 function updateBudgetDisplay() {
   spentValue.textContent = spent;
   remainingValue.textContent = budget - spent;
 }
 
+// Function to Fetch players
 function loadPlayers() {
-  fetch("http://localhost:5502/players")
-    .then((response) => response.json())
+  fetch("http://localhost:5502/players") // GET REQUEST
+    .then((response) => response.json()) // Promise
     .then((data) => {
       players = Array.isArray(data) ? data : data.players || [];
       if (!players || players.length === 0) {
+        // checks if list is empty
         console.error("No players found in response:", data);
       } else {
-        renderPlayerPool();
+        renderPlayerPool(); // If conditions true we can render our player pool
       }
     })
+    // simple error log
     .catch((err) => {
       console.error("Fetch error:", err);
       alert(
         "Could not load players. Make sure json-server is running and the URL is correct."
       );
-    });
+    }); //
 }
 
 function renderPlayerPool() {
-  playerList.innerHTML = ""; // clear
+  // playerList.innerHTML = ""; // deletes anything already inside the playerList
 
   players.forEach((player) => {
+    //loops through data and builds card for each
     const card = document.createElement("div");
     card.className = "player-card";
 
@@ -53,24 +65,27 @@ function renderPlayerPool() {
       <p>${player.position}</p>
       <p>£${player.cost}</p>
     `;
-    playerList.appendChild(card);
+    // Dynamic addition of details using string interpolation
+    playerList.appendChild(card); // Adds card to playerList
   });
 }
 
 function setupJerseys() {
+  // fucntion that makes jersey slots clickable
   const positions = ["gk", "def", "mid", "mid2", "att"];
 
   positions.forEach((pos) => {
     const slot = document.getElementById(pos);
 
     slot.addEventListener("click", () => {
-      selectedPosition = pos;
-      showPlayerDropdownFor(pos);
+      selectedPosition = pos; // Records which position has been clicked
+      showPlayerDropdownFor(pos); // Calls function displaying players in te position
     });
   });
 }
 
 function showPlayerDropdownFor(pos) {
+  //checks if player data has loaded from server
   if (!players || players.length === 0) {
     alert("Players are not loaded yet.");
     return;
@@ -81,39 +96,41 @@ function showPlayerDropdownFor(pos) {
   // Clear old dropdown/button in this slot only
   const oldSelect = slotDiv.querySelector("select");
   const oldBtn = slotDiv.querySelector("button");
-  if (oldSelect) oldSelect.remove();
+  if (oldSelect) oldSelect.remove(); //clears slot - fixed error of always reffering back to initial player inside the slot
   if (oldBtn) oldBtn.remove();
+  // fixed issue of multiple dropdowns appearing
 
   // Filter eligible players
   const desiredPosition = positionMap[pos];
-  const eligible = players.filter((p) => p.position === desiredPosition);
+  const eligible = players.filter((p) => p.position === desiredPosition); // looks through list filters only desired position
 
   if (eligible.length === 0) {
     alert("No players available for that position.");
     return;
   }
 
-  // Create select
+  // Create select dropdown box
   const select = document.createElement("select");
   select.addEventListener("click", (event) => {
-    event.stopPropagation();
+    event.stopPropagation(); // This was a big issue - Prevents dropdown form retriggering
   });
 
   eligible.forEach((p) => {
-    const opt = document.createElement("option");
+    // for each player inn the position selected
+    const opt = document.createElement("option"); // creates option for each player in selected position
     opt.value = String(p.id);
-    opt.textContent = `${p.name} — ${p.club} — £${p.cost}`;
-    select.appendChild(opt);
+    opt.textContent = `${p.name} — ${p.club} — £${p.cost}`; // actual displayed txt in option
+    select.appendChild(opt); // adds option to dropdown
   });
 
   // Create Assign button
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.textContent = "Assign Player";
+  btn.textContent = "Assign Player"; 
 
   btn.addEventListener("click", () => {
-    const chosenId = Number(select.value);
-    assignPlayerById(chosenId);
+    const chosenId = Number(select.value); // converts id into number 
+    assignPlayerById(chosenId); // function called -- > this is what updates the budget and player icon
 
     // remove dropdown & button after assignment
     select.remove();
@@ -123,9 +140,10 @@ function showPlayerDropdownFor(pos) {
   // Add to slot
   slotDiv.appendChild(select);
   slotDiv.appendChild(btn);
+  // makes button and dropdown visible
 }
 
-// ========================
+
 // Assign player by id
 
 function assignPlayerById(id) {
@@ -133,13 +151,13 @@ function assignPlayerById(id) {
   if (!player) return alert("Selected player not found.");
 
   if (spent + player.cost > budget) return alert("Not enough budget.");
-  if (team.filter((t) => t.club === player.club).length >= 3)
+  if (team.filter((t) => t.club === player.club).length >= 3) // if there are more than 3 players with the same value for club then returns a message
     return alert("Max 3 players per club.");
 
   // Save to team
   team.push({ ...player, pos: selectedPosition });
-  spent += Number(player.cost);
-  updateBudgetDisplay();
+  spent += Number(player.cost); // pushes values into my team array in the backend when saved
+  updateBudgetDisplay(); // budget updated
 
   // Update the slot visually
   const slotDiv = document.getElementById(selectedPosition);
@@ -173,9 +191,9 @@ function saveTeam() {
 }
 
 function resetTeam() {
-  team = [];
-  spent = 0;
-  selectedPosition = null;
+  team = []; // resets team in the json to empty array/obj
+  spent = 0; // resets spent variable
+  selectedPosition = null; // resets selector
   updateBudgetDisplay();
 
   // Reset each slot visually
@@ -189,11 +207,14 @@ function resetTeam() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {  // wait command telling browser not to run code until HTML is loaded
+  //calling functions
   setupJerseys();
   updateBudgetDisplay();
   loadPlayers();
 
-  document.getElementById("save-team").addEventListener("click", saveTeam);
+
+  // adding functionality to buttons
+  document.getElementById("save-team").addEventListener("click", saveTeam); 
   document.getElementById("reset-team").addEventListener("click", resetTeam);
 });
