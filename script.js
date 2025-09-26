@@ -21,7 +21,7 @@ function updateBudgetDisplay() {
 }
 
 function loadPlayers() {
-  fetch("http://localhost:4000/players")
+  fetch("http://localhost:5502/players")
     .then((response) => response.json())
     .then((data) => {
       players = Array.isArray(data) ? data : data.players || [];
@@ -40,7 +40,7 @@ function loadPlayers() {
 }
 
 function renderPlayerPool() {
-  playerListEl.innerHTML = ""; // clear
+  playerList.innerHTML = ""; // clear
 
   players.forEach((player) => {
     const card = document.createElement("div");
@@ -53,7 +53,7 @@ function renderPlayerPool() {
       <p>${player.position}</p>
       <p>£${player.cost}</p>
     `;
-    playerListEl.appendChild(card);
+    playerList.appendChild(card);
   });
 }
 
@@ -62,8 +62,11 @@ function setupJerseys() {
 
   positions.forEach((pos) => {
     const slot = document.getElementById(pos);
-    selectedPosition = pos;
-    showPlayerDropdownFor(pos);
+
+    slot.addEventListener("click", () => {
+      selectedPosition = pos;
+      showPlayerDropdownFor(pos);
+    });
   });
 }
 
@@ -81,7 +84,7 @@ function showPlayerDropdownFor(pos) {
   if (oldSelect) oldSelect.remove();
   if (oldBtn) oldBtn.remove();
 
-   // Filter eligible players
+  // Filter eligible players
   const desiredPosition = positionMap[pos];
   const eligible = players.filter((p) => p.position === desiredPosition);
 
@@ -136,9 +139,7 @@ function assignPlayerById(id) {
   selectedPosition = null;
 }
 
-// Reset
 selectedPosition = null;
-
 
 document.addEventListener("DOMContentLoaded", () => {
   setupJerseys();
