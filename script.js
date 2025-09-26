@@ -21,7 +21,7 @@ function updateBudgetDisplay() {
 }
 
 function loadPlayers() {
-  fetch("http://localhost:5500/players")
+  fetch("http://localhost:4000/players")
     .then((response) => response.json())
     .then((data) => {
       players = Array.isArray(data) ? data : data.players || [];
