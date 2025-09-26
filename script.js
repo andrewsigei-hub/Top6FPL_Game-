@@ -95,11 +95,14 @@ function showPlayerDropdownFor(pos) {
 
   // Create select
   const select = document.createElement("select");
+   select.addEventListener('click', (event) => {
+      event.stopPropagation();
+  });
 
   eligible.forEach((p) => {
     const opt = document.createElement("option");
     opt.value = String(p.id);
-    opt.textContent = `${p.name} — ${p.club} — £${fmt(p.cost)}`;
+    opt.textContent = `${p.name} — ${p.club} — £${(p.cost)}`;
     select.appendChild(opt);
   });
 
@@ -126,7 +129,7 @@ function showPlayerDropdownFor(pos) {
 // Assign player by id
 
 function assignPlayerById(id) {
-  const player = players.find((p) => p.id === id);
+  const player = players.find((p) => p.id == id);
   if (!player) return alert("Selected player not found.");
 
   if (spent + player.cost > budget) return alert("Not enough budget.");
