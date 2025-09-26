@@ -100,5 +100,48 @@ function showPlayerDropdownFor(pos) {
     select.appendChild(opt);
   });
 
+  // Create Assign button
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = "Assign Player";
+
+  btn.addEventListener("click", () => {
+    const chosenId = Number(select.value);
+    assignPlayerById(chosenId);
+
+    // remove dropdown & button after assignment
+    select.remove();
+    btn.remove();
+  });
+
+  // Add to slot
+  slotDiv.appendChild(select);
+  slotDiv.appendChild(btn);
 }
 
+// ========================
+// Assign player by id
+
+function assignPlayerById(id) {
+  const player = players.find((p) => p.id === id);
+  if (!player) return alert("Selected player not found.");
+
+  if (spent + player.cost > budget) return alert("Not enough budget.");
+  if (team.filter((t) => t.club === player.club).length >= 2)
+    return alert("Max 2 players per club.");
+
+  team.push(player);
+  spent += Number(player.cost);
+  updateBudgetDisplay();
+  selectedPosition = null;
+}
+
+// Reset
+selectedPosition = null;
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupJerseys();
+  updateBudgetDisplay();
+  loadPlayers();
+});
