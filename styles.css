@@ -7,7 +7,6 @@
 }
 
 header {
-  color: #ffffff;
   text-align: center;
   padding: 20px;
   font-size: 3rem;
@@ -16,11 +15,11 @@ header {
 
 /* Page layout */
 body {
-  background: #e6f2ff url("https://t4.ftcdn.net/jpg/05/99/15/97/360_F_599159727_pFIXrrEiyZnuSw5h0qOjAuVMeQfTYpQM.jpg") no-repeat center/cover;
-  padding: 20px;
-  color: #333333;
-  background: linear-gradient(135deg, #2E0854, #1A1A40);
-
+  color: black;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/035/674/780/non_2x/zigzag-magenta-background-epl-english-premier-league-thumbnail-video-print-web-background-free-vector.jpg);
+  background-repeat: no-repeat;
+  background-size:cover; /* ✅ show whole image */
+  background-position: center;
 }
 
 header {
@@ -34,7 +33,6 @@ header {
   background: rgba(255, 255, 255, 0.9);
   padding: 6px 10px;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
@@ -74,7 +72,7 @@ main {
 
 /* Player card */
 .player-card {
-    background: #ffffff;
+  background: whitesmoke;
   border-radius: 12px;
   padding: 12px;
 }
@@ -96,14 +94,14 @@ main {
 
 /* The field (jerseys) */
 #positionPlaceHolder {
-  background-image: url(https://img.freepik.com/free-vector/soccer-green-field_225004-1137.jpg?semt=ais_hybrid&w=740&q=80);
-  background-size: cover;
-  background-repeat: no-repeat;  /* stop repeating */
-  background-position: center;   /* keep it centered */
-  width: 80%;
+  background: rgba(255, 255, 255, 0.9);
+  background-position: center;
+  width: 100%;
   height: 100%;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
+  max-width: 1500px; /* ✅ keeps it from stretching */
+  margin: 0 auto;
 
   /* Grid layout for 1-1-2-1 */
   display: grid;
@@ -139,7 +137,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
   text-align: center;
 }
 
@@ -148,6 +145,16 @@ main {
   max-width: 5000px;
   max-height: 5000px;
   font-style: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  /* Center text/number inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* dropdown + button inside jersey slot */
@@ -169,3 +176,30 @@ main {
   cursor: pointer;
 }
 
+#reset-team {
+  padding: 10px 18px;
+  min-width: 120px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border: 2px solid #cc4040;
+  border-radius: 4px;
+  background: #e74c3c;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#save-team {
+  padding: 10px 18px;
+  min-width: 120px;
+  margin-top: 20px;
+
+  border: 2px solid #5cb85c;
+  border-radius: 4px;
+  background: #62c462;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
