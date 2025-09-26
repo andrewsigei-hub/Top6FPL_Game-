@@ -1,24 +1,171 @@
+/* Basic reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
+header {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+}
 
+/* Page layout */
 body {
-  background-image: url(https://thumbs.dreamstime.com/b/half-football-field-soccer-field-pattern-texture-clipping-path-abstract-background-86136398.jpg);
-  background-size: cover;
-  width: 90%;
-  height: 88vh;
+  background: #e6f2ff url("https://t4.ftcdn.net/jpg/05/99/15/97/360_F_599159727_pFIXrrEiyZnuSw5h0qOjAuVMeQfTYpQM.jpg") no-repeat center/cover;
+  padding: 20px;
+  color: #333333;
+  background: linear-gradient(135deg, #2E0854, #1A1A40);
+
 }
 
-.position-box {
-  cursor: pointer;
+header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 12px;
+}
+
+#Budget div {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#logo {
+  display: block;
+  width: 110px;
+  margin: 0 auto 14px auto;
+}
+
+/* Layout for pool + field */
+main {
+  display: flex;
+  flex-direction: column; /* stack instead of side by side */
+  gap: 20px;
   align-items: center;
 }
-.jersey-icon {
-  max-width: 100%;
-  max-height: 100%;
-  pointer-events: auto; /* ensures image can receive clicks */
+
+/* Player pool */
+#player-pool {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 480px;
+  width: 100%;
 }
+
+.playerList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Player card */
+.player-card {
+    background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+}
+.player-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+.player-card h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.player-card p {
+  font-size: 12px;
+  color: #333;
+}
+
+/* The field (jerseys) */
+#positionPlaceHolder {
+  background-image: url(https://img.freepik.com/free-vector/soccer-green-field_225004-1137.jpg?semt=ais_hybrid&w=740&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;  /* stop repeating */
+  background-position: center;   /* keep it centered */
+  width: 80%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 8px;
+
+  /* Grid layout for 1-1-2-1 */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  grid-template-rows: repeat(4, auto);
+  gap: 24px 60px; /* row gap, then column gap */
+  justify-items: center;
+  align-items: center;
+}
+
+/* Center single players across both columns */
+#gk {
+  grid-column: 1 / -1; /* top row, spans both columns */
+}
+
+#def {
+  grid-column: 1 / -1; /* second row, centered */
+}
+
+#mid {
+  grid-column: 1; /* left side of row 3 */
+}
+
+#mid2 {
+  grid-column: 2; /* right side of row 3 */
+}
+
+#att {
+  grid-column: 1 / -1; /* last row, centered */
+}
+/* Each jersey slot */
+.position-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* small style for jersey icons */
+.jersey-icon {
+  max-width: 5000px;
+  max-height: 5000px;
+  font-style: bold;
+}
+
+/* dropdown + button inside jersey slot */
+.position-box select {
+  width: 120px;
+  margin: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+.position-box button {
+  margin: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  background: #2b8cff;
+  color: white;
+  cursor: pointer;
+}
+
