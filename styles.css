@@ -10,3 +10,15 @@ body {
   width: 90%;
   height: 88vh;
 }
+
+.position-box {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jersey-icon {
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: auto; /* ensures image can receive clicks */
+}

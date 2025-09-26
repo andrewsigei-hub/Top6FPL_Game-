@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fantasy 5</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <link rel="stylesheet" href="styles.css" />
   <body>
     <header>
       <div id="Budget">
-        <div id="spent"><p>Spent:</p></div>
-        <div id="remaining"><p>Remaining</p></div>
+        <div id="spent">Spent: <span id="spent-value">0.0</span></div>
+        <div id="remaining">
+          Remaining: <span id="remaining-value">50.0</span>
+        </div>
       </div>
     </header>
     <h1>FIVES FANTASY</h1>
@@ -28,28 +34,29 @@
         <img
           src="https://media.istockphoto.com/id/1032186330/vector/sport-t-shirt-line-icon.jpg?s=612x612&w=0&k=20&c=CF5JW9pOKeYw5Bs81mvLRKDaeYfgdM0_rbswq8Y_TWI="
           alt="jersey-icon"
-          id="jersey-icon"
+          class="jersey-icon"
         />
       </div>
       <div id="def" class="position-box">
         <img
           src="https://media.istockphoto.com/id/1032186330/vector/sport-t-shirt-line-icon.jpg?s=612x612&w=0&k=20&c=CF5JW9pOKeYw5Bs81mvLRKDaeYfgdM0_rbswq8Y_TWI="
           alt="jersey-icon"
-          id="jersey-icon"
+          class="jersey-icon"
         />
       </div>
-      <div id="mid" class="position-box"></div>
-      <img
-        src="https://media.istockphoto.com/id/1032186330/vector/sport-t-shirt-line-icon.jpg?s=612x612&w=0&k=20&c=CF5JW9pOKeYw5Bs81mvLRKDaeYfgdM0_rbswq8Y_TWI="
-        alt="jersey-icon"
-        id="jersey-icon"
-      />
+      <div id="mid" class="position-box">
+        <img
+          src="https://media.istockphoto.com/id/1032186330/vector/sport-t-shirt-line-icon.jpg?s=612x612&w=0&k=20&c=CF5JW9pOKeYw5Bs81mvLRKDaeYfgdM0_rbswq8Y_TWI="
+          alt="jersey-icon"
+          class="jersey-icon"
+        />
+      </div>
 
       <div id="att" class="position-box">
         <img
           src="https://media.istockphoto.com/id/1032186330/vector/sport-t-shirt-line-icon.jpg?s=612x612&w=0&k=20&c=CF5JW9pOKeYw5Bs81mvLRKDaeYfgdM0_rbswq8Y_TWI="
           alt="jersey-icon"
-          id="jersey-icon"
+          class="jersey-icon"
         />
       </div>
     </section>
