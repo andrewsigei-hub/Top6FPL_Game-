@@ -291,5 +291,10 @@
       "cost": 9.5,
       "image": "https://ui-avatars.com/api/?name=Randal+Kolo+Muani&size=128"
     }
-  ]
+  ],
+  "finalTeam": {
+    "team": [] 
+
+  }
 }
+
