@@ -72,7 +72,7 @@ function renderPlayerPool() {
 
 function setupJerseys() {
   // fucntion that makes jersey slots clickable
-  const positions = ["gk", "def", "mid", "mid2", "att"];
+  const posistions = ["gk", "def", "mid", "mid2", "att"];
 
   positions.forEach((pos) => {
     const slot = document.getElementById(pos);
@@ -174,7 +174,7 @@ function saveTeam() {
   const teamData = { team: team }; // Prepare the data structure to send
 
   fetch("http://localhost:5502/finalTeam", {
-    method: "PUT", // Specifies that you are only updating part of the resource
+    method: "PUT", // Specifies that I am creating a new resource - Initially used patch but did not work
     headers: {
       "Content-Type": "application/json", // Tells the server the data is JSON
     },

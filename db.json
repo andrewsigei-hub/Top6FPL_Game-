@@ -301,39 +301,39 @@
         "pos": "gk"
       },
       {
-        "id": "7",
-        "name": "William Saliba",
-        "club": "Arsenal",
+        "id": "11",
+        "name": "Matthijs De Ligt",
+        "club": "Manchester United",
         "position": "Defender",
-        "cost": 6,
-        "image": "https://ui-avatars.com/api/?name=William+Saliba&size=128",
+        "cost": 5.5,
+        "image": "https://ui-avatars.com/api/?name=Matthijs+De+Ligt&size=128",
         "pos": "def"
       },
       {
-        "id": "18",
-        "name": "Mohamed Salah",
-        "club": "Liverpool",
+        "id": "16",
+        "name": "Enzo Fernández",
+        "club": "Chelsea",
         "position": "Midfielder",
-        "cost": 9,
-        "image": "https://ui-avatars.com/api/?name=Mohamed+Salah&size=128",
-        "pos": "mid"
-      },
-      {
-        "id": "20",
-        "name": "Bernardo Silva",
-        "club": "Manchester City",
-        "position": "Midfielder",
-        "cost": 8.5,
-        "image": "https://ui-avatars.com/api/?name=Bernardo+Silva&size=128",
+        "cost": 8,
+        "image": "https://ui-avatars.com/api/?name=Enzo+Fernandez&size=128",
         "pos": "mid2"
       },
       {
-        "id": "28",
-        "name": "Liam Delap",
-        "club": "Chelsea",
+        "id": "21",
+        "name": "Bruno Fernandes",
+        "club": "Manchester United",
+        "position": "Midfielder",
+        "cost": 8,
+        "image": "https://ui-avatars.com/api/?name=Bruno+Fernandes&size=128",
+        "pos": "mid"
+      },
+      {
+        "id": "31",
+        "name": "Erling Haaland",
+        "club": "Manchester City",
         "position": "Attacker",
-        "cost": 9,
-        "image": "https://ui-avatars.com/api/?name=Liam+Delap&size=128",
+        "cost": 12,
+        "image": "https://ui-avatars.com/api/?name=Erling+Haaland&size=128",
         "pos": "att"
       }
     ]
